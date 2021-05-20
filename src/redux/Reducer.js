@@ -12,10 +12,11 @@ const userData = {
     name:"",
     email:"",
     phone:"",
-    address:""
+    address:"",
+    isLogin:false
 }
 
-function bukuReducer (state=bukuState,action){
+function BukuReducer (state=bukuState,action){
     if(action.type === "SET_BUKU"){
         return {
             ...state,
@@ -25,7 +26,7 @@ function bukuReducer (state=bukuState,action){
     return state;
 }
 
-function userReducer(state=userData,action){
+function UserReducer(state=userData,action){
     if(action.type==="SET_USER"){
         return{
             ...state,
@@ -35,9 +36,9 @@ function userReducer(state=userData,action){
     return state;
 }
 
-const reducer = combineReducers(
-    bukuReducer,
-    userReducer
-)
+const reducer = combineReducers({
+    BukuReducer,
+    UserReducer
+})
 
 export default reducer
